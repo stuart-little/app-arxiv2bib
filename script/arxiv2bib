@@ -158,20 +158,14 @@ The rest of the options (and the arguments) go hand-in-hand with identically-nam
 
 The rest of the arguments constitute the C<search_query>, built as described in the L<API docs|https://arxiv.org/help/api/user-manual#query_details>.
 
-ti 	Title
+The individual lexemes are of the form C<prefix:string>, where the prefix is one of the following (with the second column indicating what the prefix stands for):
 
-au 	Author
-
-abs 	Abstract
-
-co 	Comment
-
-jr 	Journal Reference
-
-cat 	Subject Category
-
-rn 	Report Number
-
-id 	Id (use id_list instead)
-
-all 	All of the above
+    ti    Title
+    au    Author
+    abs   Abstract
+    co    Comment
+    jr    Journal Reference
+    cat   Subject Category
+    rn    Report Number
+    id    Id (use id_list instead)
+    all   All of the above
