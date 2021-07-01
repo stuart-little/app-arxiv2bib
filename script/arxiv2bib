@@ -31,9 +31,14 @@ GetOptions (
 
     "b|bibtex" => \$bibtex,
     "l|label:s" => \$label,
-    ) or pod2usage(2);
+    ) or pod2usage(-verbose => 0);
 
 ($help) && do {
+    pod2usage(-verbose => 1);
+    exit;
+};
+
+($man) && do {
     pod2usage(-verbose => 2);
     exit;
 };
@@ -130,7 +135,12 @@ Manual install:
 
 =head1 OPTIONS
 
-=head1 API annotations
+    -h | --help		usage examples and a breakdown of options/arguments
+    --man		full documentation
+    -n | --dry		only dump the the L<Mojo request object|https://docs.mojolicious.org/Mojo/Message/Request> your options have formed
+    -v | --verbbose	dump the entire L<Mojo response object|https://docs.mojolicious.org/Mojo/Message/Response> you've received
+
+=head1 ARGUMENTS
 
 ti 	Title
 
