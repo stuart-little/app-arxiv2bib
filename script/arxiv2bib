@@ -28,9 +28,9 @@ GetOptions (
     "sortBy:s" => \$sortBy,
     "sortOrder:s" => \$sortOrder,
 
-    "id_list:s" => $id_list,
-    "start:i" => $start,
-    "max_results:i" => $max_results,    
+    "id_list:s" => \$id_list,
+    "start:i" => \$start,
+    "max_results:i" => \$max_results,    
     ) or pod2usage(-verbose => 0);
 
 ($help) && do {
@@ -150,9 +150,9 @@ The rest of the options (and the arguments) go hand-in-hand with identically-nam
 
     --sortBy            "submittedDate" (default), "relevance" or "lastUpdatedDate"
     --sortOrder         "descending" (default) or "ascending"
-    --id_list
-    --start
-    --max_results
+    --id_list           comma-separated list of arXiv identifiers, e.g. 2106.16211,2106.16119,2106.15900; defaults to ""
+    --start             index of the first displayed entry in the list returned by the search; defaults to 0
+    --max_results       maximal number of displayed returned entries; defaults to 200
 
 =head1 ARGUMENTS
 
