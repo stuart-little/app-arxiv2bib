@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+,#!/usr/bin/env perl
 use warnings;
 use v5.20;
 
@@ -22,15 +22,15 @@ GetOptions (
     "n|dry" => \$dry,
     "v|verbose" => \$verbose,
 
+    "b|bibtex!" => \$bibtex,
+    "l|label:s" => \$label,
+
     "sortBy:s" => \$sortBy,
     "sortOrder:s" => \$sortOrder,
 
     "id_list:s" => $id_list,
     "start:i" => $start,
-    "max_results:i" => $max_results,
-
-    "b|bibtex!" => \$bibtex,
-    "l|label:s" => \$label,
+    "max_results:i" => $max_results,    
     ) or pod2usage(-verbose => 0);
 
 ($help) && do {
@@ -142,6 +142,9 @@ Manual install:
 
     -b | --bibtex       (default) returns BibTeX entries
          --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
+
+    -l  --label         a string that will be used as the label of the BibTeX entry in place of the default (which is the arXiv identifier)
+                        only really useful if you're interested in one of the entries being returned, since it labels all entries identically
 
 =head1 ARGUMENTS
 

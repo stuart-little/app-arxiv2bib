@@ -36,6 +36,9 @@ Manual install:
     -b | --bibtex       (default) returns BibTeX entries
          --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
 
+    -l  --label         a string that will be used as the label of the BibTeX entry in place of the default (which is the arXiv identifier)
+                        only really useful if you're interested in one of the entries being returned, since it labels all entries identically
+
 =head1 ARGUMENTS
 
 ti 	Title
