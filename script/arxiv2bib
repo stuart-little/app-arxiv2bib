@@ -117,6 +117,8 @@ App::arxiv2bib - Extract bibliographic data from the arXiv API
 
     arxiv2bib --nobibtex au:author1 ANDNOT ti:title
 
+    arxiv2bib --sortBy=relevance --sortOrder=ascending --max_results=20 au:author1 AND au:author2
+
 =head1 DESCRIPTION
 
 The C<script/arxiv2bib> executable provided by the distribution extracts bibliographic information using the L<arXiv API|https://arxiv.org/help/api/user-manual>.
