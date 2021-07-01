@@ -106,19 +106,27 @@ App::arxiv2bib - Extract bibliographic data from the arXiv API
 
 =head1 SYNOPSIS
 
-arxiv2bib [options] [args]
+    arxiv2bib [options] [args]
 
-arxiv2bib au:author1 AND au:author2 AND ti:title
+    arxiv2bib au:author1 AND au:author2 AND ti:title
 
-arxiv2bib --bibtex au:author1 ANDNOT ti:title
+    arxiv2bib --bibtex au:author1 ANDNOT ti:title
 
 =head1 DESCRIPTION
+
+The C<script/arxiv2bib> executable provided by the distribution extracts bibliographic information using the L<arXiv API|https://arxiv.org/help/api/user-manual>.
 
 =head1 INSTALLATION
 
 Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: clone this repo, C<cd> into it, and then:
 
     $ cpanm .
+
+Manual install:
+
+    $ perl Makefile.PL
+    $ make
+    $ make install
 
 =head1 OPTIONS
 
