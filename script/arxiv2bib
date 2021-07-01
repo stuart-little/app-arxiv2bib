@@ -13,7 +13,7 @@ use Pod::Usage;
 my($help,$man,$dry,$verbose);
 my($sortBy,$sortOrder) = qw(submittedDate descending);
 my($id_list,$start,$max_results) = ("",0,200);
-my $bibtex;
+my $bibtex=1;
 my $label;
 
 GetOptions (
@@ -29,7 +29,7 @@ GetOptions (
     "start:i" => $start,
     "max_results:i" => $max_results,
 
-    "b|bibtex" => \$bibtex,
+    "b|bibtex!" => \$bibtex,
     "l|label:s" => \$label,
     ) or pod2usage(-verbose => 0);
 
@@ -139,6 +139,9 @@ Manual install:
          --man          full documentation
     -n | --dry          only dump the the Mojo request object your options have formed
     -v | --verbose      dump the entire Mojo response object you've received
+
+    -b | --bibtex       (default) returns BibTeX entries
+  -nob | --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
 
 =head1 ARGUMENTS
 
