@@ -1,0 +1,41 @@
+=head1 NAME
+
+App::arxiv2bib - Extract bibliographic data from the arXiv API
+
+=head1 SYNOPSIS
+
+arxiv2bib [options] [args]
+
+arxiv2bib au:author1 AND au:author2 AND ti:title
+
+arxiv2bib --bibtex au:author1 ANDNOT ti:title
+
+=head1 DESCRIPTION
+
+=head1 INSTALLATION
+
+Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: clone this repo, C<cd> into it, and then:
+
+    $ cpanm .
+
+=head1 OPTIONS
+
+=head1 API annotations
+
+ti 	Title
+
+au 	Author
+
+abs 	Abstract
+
+co 	Comment
+
+jr 	Journal Reference
+
+cat 	Subject Category
+
+rn 	Report Number
+
+id 	Id (use id_list instead)
+
+all 	All of the above
