@@ -23,8 +23,8 @@ WriteMakefile(
 	    resources => {
 		repository => {
 		    type => 'git',
-		    url  => 'https://github.com/stuart-little/??.git',
-		    web  => 'https://github.com/stuart-little/??',
+		    url  => 'https://github.com/stuart-little/app-arxiv2bib.git',
+		    web  => 'https://github.com/stuart-little/app-arxiv2bib',
 		},
 	}})
      : ()
