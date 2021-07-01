@@ -135,10 +135,10 @@ Manual install:
 
 =head1 OPTIONS
 
- -h | --help         usage examples and a breakdown of options/arguments
- --man          full documentation
- -n | --dry          only dump the the L<Mojo request object|https://docs.mojolicious.org/Mojo/Message/Request> your options have formed
- -v | --verbose      dump the entire L<Mojo response object|https://docs.mojolicious.org/Mojo/Message/Response> you've received
+    -h | --help         usage examples and a breakdown of options/arguments
+         --man          full documentation
+    -n | --dry          only dump the the Mojo request object your options have formed
+    -v | --verbose      dump the entire Mojo response object you've received
 
 =head1 ARGUMENTS
 
