@@ -71,3 +71,6 @@ That'll search for papers coauthored by C<author1> and C<author2> but I<not> C<a
 
 You can also group your search terms parenthetically for more sophisticated logical constructs:
 
+    arxiv2bib "(au:author1 AND ti:title1) OR (au:author2 AND ti:title2)"
+
+I had to enclose that in quotes though, because otherwise the shell gets confused.
