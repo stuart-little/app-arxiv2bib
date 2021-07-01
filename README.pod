@@ -34,7 +34,7 @@ Manual install:
     -v | --verbose      dump the entire Mojo response object you've received
 
     -b | --bibtex       (default) returns BibTeX entries
-  -nob | --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
+         --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
 
 =head1 ARGUMENTS
 
