@@ -156,6 +156,8 @@ The rest of the options (and the arguments) go hand-in-hand with identically-nam
 
 =head1 ARGUMENTS
 
+The rest of the arguments constitute the C<search_query>, built as described in the L<API docs|https://arxiv.org/help/api/user-manual#query_details>.
+
 ti 	Title
 
 au 	Author
