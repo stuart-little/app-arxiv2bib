@@ -36,8 +36,6 @@ GetOptions (
     "max_results:i" => \$max_results,    
     ) or pod2usage(-verbose => 0);
 
-# say Dumper(\%type); exit;
-
 ($help) && do {
     pod2usage(-verbose => 1);
     exit;
