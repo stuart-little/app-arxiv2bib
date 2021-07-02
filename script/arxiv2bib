@@ -74,16 +74,11 @@ EOF
 
 sub hsh2ams($h,$label) {
     my $msg = << "EOF";
-\bib{MR1222415}{book}{
-   author={Wegge-Olsen, N. E.},
-   title={$K$-theory and $C^*$-algebras},
-   series={Oxford Science Publications},
-   note={A friendly approach},
-   publisher={The Clarendon Press, Oxford University Press, New York},
-   date={1993},
-   pages={xii+370},
-   isbn={0-19-859694-4},
-   review={\MR{1222415}},
+\bib{$label}{misc}{
+   author={$authors},
+   title={$title},
+   date={$year},
+   note={$id},   
 }
 EOF
     return $msg;
