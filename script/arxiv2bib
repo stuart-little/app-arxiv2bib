@@ -13,7 +13,7 @@ use Pod::Usage;
 my($help,$man,$dry,$verbose);
 my($sortBy,$sortOrder) = qw(submittedDate descending);
 my($id_list,$start,$max_results) = ("",0,200);
-my $bibtex=1;
+my ($bibtex,$raw,$amsrefs)=(1,);
 my $label;
 
 GetOptions (
@@ -23,6 +23,8 @@ GetOptions (
     "v|verbose" => \$verbose,
 
     "b|bibtex!" => \$bibtex,
+    "amsrefs" => \$amsrefs,
+    "raw" => \$raw,
     "l|label:s" => \$label,
 
     "sortBy:s" => \$sortBy,
@@ -88,6 +90,12 @@ sub hsh2ams($h,$label) {
 }
 EOF
     return $msg;
+}
+
+sub renderEntry($entry,$label,$amsrefs,$raw) {
+    ($raw) && return Dumper(entry2hsh($entry));
+    ($amsrefs) && return hsh2ams(entry2hsh($entry),$label);
+    return hsh2bbtx(entry2hsh($entry),$label);    
 }
 
 my $ua = Mojo::UserAgent->new;
