@@ -72,6 +72,10 @@ EOF
     return $msg;
 }
 
+sub hsh2ams($h,$label) {
+    
+}
+
 my $ua = Mojo::UserAgent->new;
 $ua = $ua->max_redirects(3);
 
