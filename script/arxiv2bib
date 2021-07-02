@@ -55,12 +55,17 @@ sub entry2hsh($entry) {
     return \%h;
 }
 
-sub hsh2bbtx($h,$label) {
+sub hsh2strings($h,$label) {
     my $authors = $h->{'authors'}->join(', ');
     my $title = $h->{'title'};
     my $year = ($h->{'published'} =~ /^(\d*)/) && $1;
     my $id = $h->{'id'};
-    $label//= ($id =~ /.*\/(.*)/) && $1;	
+    $label//= ($id =~ /.*\/(.*)/) && $1;
+    return [$label,$authors,$title,$year,$id];
+}
+
+sub hsh2bbtx($h,$label) {
+    my ($label,$authors,$title,$year,$id) = @{hsh2strings($h,$label)};
     my $msg = << "EOF";
 \@misc{$label,
 Author = {$authors},
@@ -73,6 +78,7 @@ EOF
 }
 
 sub hsh2ams($h,$label) {
+    my ($label,$authors,$title,$year,$id) = @{hsh2strings($h,$label)};
     my $msg = << "EOF";
 \bib{$label}{misc}{
    author={$authors},
