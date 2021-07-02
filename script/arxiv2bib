@@ -127,7 +127,10 @@ my $res = $ua->start($tx)->res;
 };
 
 my $dom = $res->dom;
-$dom->find('entry')->each(sub { say( ($bibtex) ? (hsh2bbtx(entry2hsh($_), $label)) : (Dumper(entry2hsh($_))) ) });
+
+# $dom->find('entry')->each(sub { say( ($bibtex) ? (hsh2bbtx(entry2hsh($_), $label)) : (Dumper(entry2hsh($_))) ) });
+
+$dom->find('entry')->each(sub { say renderEntry($_,$label,$amsrefs,$raw) });
 
 __END__
 
