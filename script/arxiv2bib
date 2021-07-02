@@ -13,7 +13,7 @@ use Pod::Usage;
 my($help,$man,$dry,$verbose);
 my($sortBy,$sortOrder) = qw(submittedDate descending);
 my($id_list,$start,$max_results) = ("",0,200);
-my ($bibtex,$raw,$amsrefs)=(1,);
+my($raw,$amsrefs);
 my $label;
 
 GetOptions (
@@ -22,9 +22,9 @@ GetOptions (
     "n|dry" => \$dry,
     "v|verbose" => \$verbose,
 
-    "b|bibtex!" => \$bibtex,
     "amsrefs" => \$amsrefs,
     "raw" => \$raw,
+    
     "l|label:s" => \$label,
 
     "sortBy:s" => \$sortBy,
