@@ -13,17 +13,18 @@ use Pod::Usage;
 my($help,$man,$dry,$verbose);
 my($sortBy,$sortOrder) = qw(submittedDate descending);
 my($id_list,$start,$max_results) = ("",0,200);
-my($raw,$amsrefs);
+my %type;
 my $label;
 
 GetOptions (
+    \%type,
     "h|help" => \$help,
     "man" => \$man,
     "n|dry" => \$dry,
     "v|verbose" => \$verbose,
 
-    "amsrefs" => \$amsrefs,
-    "raw" => \$raw,
+    "amsrefs",
+    "raw",
     
     "l|label:s" => \$label,
 
@@ -34,6 +35,8 @@ GetOptions (
     "start:i" => \$start,
     "max_results:i" => \$max_results,    
     ) or pod2usage(-verbose => 0);
+
+# say Dumper(\%type); exit;
 
 ($help) && do {
     pod2usage(-verbose => 1);
@@ -92,9 +95,9 @@ EOF
     return $msg;
 }
 
-sub renderEntry($entry,$label,$amsrefs,$raw) {
-    ($raw) && return Dumper(entry2hsh($entry));
-    ($amsrefs) && return hsh2ams(entry2hsh($entry),$label);
+sub renderEntry($entry,$label,$type) {
+    (exists $type->{raw}) && return Dumper(entry2hsh($entry));
+    (exists $type->{amsrefs}) && return hsh2ams(entry2hsh($entry),$label);
     return hsh2bbtx(entry2hsh($entry),$label);    
 }
 
@@ -128,7 +131,7 @@ my $res = $ua->start($tx)->res;
 
 my $dom = $res->dom;
 
-$dom->find('entry')->each(sub { say renderEntry($_,$label,$amsrefs,$raw) });
+$dom->find('entry')->each(sub { say renderEntry($_,$label,\%type) });
 
 __END__
 
