@@ -5,7 +5,6 @@ our $VERSION=0.10;
 1;
 
 __END__
-
 =head1 NAME
 
 App::arxiv2bib - Extract bibliographic data from the arXiv API
@@ -46,7 +45,7 @@ Manual install:
     -b | --bibtex       (default) returns BibTeX entries
          --nobibtex     negation of the preceding option; dumps hashes containing most of the info retrieved from the API
 
-    -l  --label         a string that will be used as the label of the BibTeX entry in place of the default (which is the arXiv identifier)
+    -l | --label        a string that will be used as the label of the BibTeX entry in place of the default (which is the arXiv identifier)
                         only really useful if you're interested in one of the entries being returned, since it labels all entries identically
 
 The rest of the options go hand-in-hand with identically-named query parameters in L<the API|https://arxiv.org/help/api/user-manual>, so that will be essential documentation.
