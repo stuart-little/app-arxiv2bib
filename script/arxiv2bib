@@ -82,7 +82,7 @@ EOF
 sub hsh2ams($h,$label) {
     my ($l,$authors,$title,$year,$id) = @{hsh2strings($h,$label)};
     my $msg = << "EOF";
-\bib{$l}{misc}{
+\\bib{$l}{misc}{
    author={$authors},
    title={$title},
    date={$year},
