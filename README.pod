@@ -22,7 +22,13 @@ It defaults to the L<BibTeX|http://www.bibtex.org/> format for entries, but can 
 
 =head1 INSTALLATION
 
-Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: clone this repo, C<cd> into it, and then:
+Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: 
+
+Just plain
+
+    $ cpanm App::arxiv2bib
+
+should work once it's been indexed by L<CPAN|https://www.cpan.org/>. For more up-to-date versions clone this repo, C<cd> into it, and then:
 
     $ cpanm .
 
