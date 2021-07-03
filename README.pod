@@ -22,9 +22,7 @@ It defaults to the L<BibTeX|http://www.bibtex.org/> format for entries, but can 
 
 =head1 INSTALLATION
 
-Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: 
-
-Just plain
+Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: just plain
 
     $ cpanm App::arxiv2bib
 
