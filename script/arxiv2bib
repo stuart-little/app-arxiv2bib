@@ -153,6 +153,8 @@ App::arxiv2bib - Extract bibliographic data from the arXiv API
 
 The C<script/arxiv2bib> executable provided by the distribution extracts bibliographic information using the L<arXiv API|https://arxiv.org/help/api/user-manual>.
 
+It defaults to the L<BibTeX|http://www.bibtex.org/> format for entries, but can optionally return L<AMSRefs|http://www.ams.org/arc/resources/amsrefs-about.html> entries or just dump raw info (a C<Perl> hash).
+
 =head1 INSTALLATION
 
 Using L<cpanm|https://metacpan.org/dist/App-cpanminus/view/bin/cpanm>: clone this repo, C<cd> into it, and then:
