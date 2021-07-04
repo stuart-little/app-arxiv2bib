@@ -84,7 +84,13 @@ The lexemes can be connected by the logical operators C<AND>, C<OR> and C<ANDNOT
 
     arxiv2bib au:author1 AND au:author2 ANDNOT au:author3
 
-That'll search for papers coauthored by C<author1> and C<author2> but I<not> C<author3>. 
+That'll search for papers coauthored by C<author1> and C<author2> but I<not> C<author3>.
+
+To handle spaces in names use underscores:
+
+    arxiv2bib au:lastname_firstname
+
+This is a feature of the arXiv API and not specific to this module; there are some examples in the relevant L<docs|https://arxiv.org/help/api/user-manual#query_details>.
 
 You can also group your search terms parenthetically for more sophisticated logical constructs:
 
